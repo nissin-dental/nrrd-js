@@ -620,7 +620,7 @@ function parseNRRDVector(str) {
 }
 
 function parseNRRDQuotedString(str) {
-    if (length<2 || str[0]!='"' || str[str.length-1]!='"') {
+    if (str.length<2 || str[0]!='"' || str[str.length-1]!='"') {
         throw new Error("Invalid NRRD quoted string: " + str);
     }
     return str.slice(1, -1).replace('\\"', '"');
